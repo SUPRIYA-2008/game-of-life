@@ -4,18 +4,19 @@ pipeline {
         pollSCM('* * * * * ')
     }
     tools {
-       maven 'mvn 3.6' 
+       maven 'mvn 3.6', 
+       jdk 'jdk-8'
     }
     stages { 
         stage('git') {
             steps {
-                git branch: 'master',
-                    url: 'https://github.com/SUPRIYA-2008/game-of-life.git'
+                 git url: 'https://github.com/SUPRIYA-2008/game-of-life.git',
+                     branch: 'master'
             }
         }
         stage('build and package') {
             steps { 
-               sh: 'mvn package'
+               sh script : 'mvn clean package'
             }
         }       
     }
