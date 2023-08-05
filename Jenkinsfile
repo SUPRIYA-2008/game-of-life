@@ -4,8 +4,7 @@ pipeline {
         pollSCM('* * * * * ')
     }
     tools {
-       maven 'mvn 3.6', 
-       jdk 'jdk-8' 
+       maven 'mvn 3.6' 
     }
     stages { 
         stage('git') {
