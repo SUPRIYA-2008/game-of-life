@@ -19,5 +19,10 @@ pipeline {
                sh script : 'mvn clean package'
             }
         }
+        stage('build and package') {
+            steps { 
+                archiveArtifacts artifacts : '**target/gameoflife-*.jar'
+            }
+        }          
     }
 }    
