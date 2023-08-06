@@ -22,6 +22,7 @@ pipeline {
         stage('artifacts') {
             steps { 
                 archiveArtifacts artifacts : '**/target/gameoflife-*.jar'
+                junit testResults : 'target/surefire-reports/TEST-*.xml'
             }
         }          
     }
