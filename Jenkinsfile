@@ -21,7 +21,7 @@ pipeline {
         }
         stage('artifacts') {
             steps { 
-                archiveArtifacts artifacts : '**target/gameoflife-*.jar'
+                archiveArtifacts artifacts : '**/target/gameoflife-*.jar'
             }
         }          
     }
